@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.jefrajames.graphql</groupId>
+    <artifactId>basic-client</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+    
+    <name>basic-graphql-client</name>
+    
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <testng.version>6.14.3</testng.version>
+        <yasson.version>1.0.3</yasson.version>
+        <jsonp-impl.version>1.1.4</jsonp-impl.version>
+        <json-api.version>1.1.5</json-api.version>
+        <jsonb-api.version>1.0.1</jsonb-api.version>
+        <commons-io.version>1.3.2</commons-io.version>
+        <commons-logging.version>1.2</commons-logging.version>
+        <httpcore.version>4.4.11</httpcore.version>
+        <httpclient.version>4.5.8</httpclient.version>
+    </properties>    
+
+    
+    <dependencies>
+        
+        <!-- GraphQLClient dependencies -->
+        <dependency>
+            <groupId>jakarta.json</groupId>
+            <artifactId>jakarta.json-api</artifactId>
+            <version>${json-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpclient.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>${httpcore.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>${commons-logging.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        
+        <!-- Classes using GraphqlClient may use JSON-B to unserialise JSON messages -->
+        <dependency>
+            <groupId>jakarta.json.bind</groupId>
+            <artifactId>jakarta.json.bind-api</artifactId>
+            <version>${jsonb-api.version}</version>
+        </dependency>
+        
+        <!-- JSON-B and JSON-P implementations needed at runtime -->        
+        <dependency>
+            <groupId>org.eclipse</groupId>
+            <artifactId>yasson</artifactId>
+            <version>${yasson.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.json</artifactId>
+            <version>${jsonp-impl.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        
+        <!-- Testing -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
+      
+    </dependencies>
+
+</project>
